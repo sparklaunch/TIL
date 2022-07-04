@@ -41,6 +41,7 @@ struct AddThingView: View {
         TextField("Thing I Learned", text: $thing)
             .textFieldStyle(.roundedBorder)
             .padding()
+            .disableAutocorrection(true)
       Button("Done") {
           if !thing.isEmpty {
               someThings.things.append(thing)
