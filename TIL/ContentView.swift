@@ -53,7 +53,7 @@ struct ContentView: View {
         Spacer()
       }
       .sheet(isPresented: $showAddThing) {
-        AddThingView()
+          AddThingView(someThings: $myThings)
       }
       .navigationTitle("TIL")
       .toolbar {
