@@ -37,13 +37,17 @@ struct ThingStore {
 }
 
 struct ContentView: View {
+    @State private var myThings = ThingStore()
   @State private var showAddThing = false
-  let tempThings = ["YOLO", "BTW"]
 
   var body: some View {
     NavigationView {
       VStack(spacing: 20) {
-        ForEach(tempThings, id: \.self) { thing in
+          if myThings.things.isEmpty {
+              Text("Add acronyms you learn")
+                  .foregroundColor(.gray)
+          }
+          ForEach(myThings.things, id: \.self) { thing in
           Text(thing)
         }
         Spacer()
